@@ -1,0 +1,4 @@
+/workspaces/try-codespace/build/CMakeFiles/edit_cache.dir
+/workspaces/try-codespace/build/CMakeFiles/Foo.dir
+/workspaces/try-codespace/build/CMakeFiles/rebuild_cache.dir
+/workspaces/try-codespace/build/CMakeFiles/foo_copy.dir

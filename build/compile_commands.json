@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/workspaces/try-codespace/build",
+  "command": "/usr/bin/c++      -o CMakeFiles/Foo.dir/main.cpp.o -c /workspaces/try-codespace/main.cpp",
+  "file": "/workspaces/try-codespace/main.cpp"
+},
+{
+  "directory": "/workspaces/try-codespace/build",
+  "command": "/usr/bin/c++      -o CMakeFiles/Foo.dir/foo.cpp.o -c /workspaces/try-codespace/foo.cpp",
+  "file": "/workspaces/try-codespace/foo.cpp"
+},
+{
+  "directory": "/workspaces/try-codespace/build",
+  "command": "/usr/bin/c++      -o CMakeFiles/foo_copy.dir/foo_copy.cpp.o -c /workspaces/try-codespace/foo_copy.cpp",
+  "file": "/workspaces/try-codespace/foo_copy.cpp"
+}
+]

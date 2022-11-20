@@ -1,0 +1,2 @@
+/usr/bin/ar qc libfoo_copy.a  CMakeFiles/foo_copy.dir/foo_copy.cpp.o
+/usr/bin/ranlib libfoo_copy.a
