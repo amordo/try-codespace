@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /workspaces/try-codespace/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -78,16 +67,27 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/try-codespace/build/CMakeFiles /workspaces/try-codespace/build/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
+	cd /workspaces/try-codespace/build && $(CMAKE_COMMAND) -E cmake_progress_start /workspaces/try-codespace/build/CMakeFiles /workspaces/try-codespace/build/old_api/CMakeFiles/progress.marks
+	cd /workspaces/try-codespace/build && $(MAKE) -f CMakeFiles/Makefile2 old_api/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/try-codespace/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /workspaces/try-codespace/build && $(MAKE) -f CMakeFiles/Makefile2 old_api/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,84 +97,60 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /workspaces/try-codespace/build && $(MAKE) -f CMakeFiles/Makefile2 old_api/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /workspaces/try-codespace/build && $(MAKE) -f CMakeFiles/Makefile2 old_api/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /workspaces/try-codespace/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named Foo
+# Convenience name for target.
+old_api/CMakeFiles/old_api.dir/rule:
+	cd /workspaces/try-codespace/build && $(MAKE) -f CMakeFiles/Makefile2 old_api/CMakeFiles/old_api.dir/rule
+.PHONY : old_api/CMakeFiles/old_api.dir/rule
 
-# Build rule for target.
-Foo: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Foo
-.PHONY : Foo
+# Convenience name for target.
+old_api: old_api/CMakeFiles/old_api.dir/rule
 
-# fast build rule for target.
-Foo/fast:
-	$(MAKE) -f CMakeFiles/Foo.dir/build.make CMakeFiles/Foo.dir/build
-.PHONY : Foo/fast
-
-#=============================================================================
-# Target rules for targets named old_api
-
-# Build rule for target.
-old_api: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 old_api
 .PHONY : old_api
 
 # fast build rule for target.
 old_api/fast:
-	$(MAKE) -f old_api/CMakeFiles/old_api.dir/build.make old_api/CMakeFiles/old_api.dir/build
+	cd /workspaces/try-codespace/build && $(MAKE) -f old_api/CMakeFiles/old_api.dir/build.make old_api/CMakeFiles/old_api.dir/build
 .PHONY : old_api/fast
 
-#=============================================================================
-# Target rules for targets named api
+foo.o: foo.cpp.o
 
-# Build rule for target.
-api: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 api
-.PHONY : api
-
-# fast build rule for target.
-api/fast:
-	$(MAKE) -f api/CMakeFiles/api.dir/build.make api/CMakeFiles/api.dir/build
-.PHONY : api/fast
-
-main.o: main.cpp.o
-
-.PHONY : main.o
+.PHONY : foo.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/Foo.dir/build.make CMakeFiles/Foo.dir/main.cpp.o
-.PHONY : main.cpp.o
+foo.cpp.o:
+	cd /workspaces/try-codespace/build && $(MAKE) -f old_api/CMakeFiles/old_api.dir/build.make old_api/CMakeFiles/old_api.dir/foo.cpp.o
+.PHONY : foo.cpp.o
 
-main.i: main.cpp.i
+foo.i: foo.cpp.i
 
-.PHONY : main.i
+.PHONY : foo.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/Foo.dir/build.make CMakeFiles/Foo.dir/main.cpp.i
-.PHONY : main.cpp.i
+foo.cpp.i:
+	cd /workspaces/try-codespace/build && $(MAKE) -f old_api/CMakeFiles/old_api.dir/build.make old_api/CMakeFiles/old_api.dir/foo.cpp.i
+.PHONY : foo.cpp.i
 
-main.s: main.cpp.s
+foo.s: foo.cpp.s
 
-.PHONY : main.s
+.PHONY : foo.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/Foo.dir/build.make CMakeFiles/Foo.dir/main.cpp.s
-.PHONY : main.cpp.s
+foo.cpp.s:
+	cd /workspaces/try-codespace/build && $(MAKE) -f old_api/CMakeFiles/old_api.dir/build.make old_api/CMakeFiles/old_api.dir/foo.cpp.s
+.PHONY : foo.cpp.s
 
 # Help Target
 help:
@@ -182,14 +158,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... Foo"
+	@echo "... rebuild_cache"
 	@echo "... old_api"
-	@echo "... api"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... foo.o"
+	@echo "... foo.i"
+	@echo "... foo.s"
 .PHONY : help
 
 
@@ -201,6 +175,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /workspaces/try-codespace/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

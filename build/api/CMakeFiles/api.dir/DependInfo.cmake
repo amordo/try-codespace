@@ -4,14 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/workspaces/try-codespace/main.cpp" "/workspaces/try-codespace/build/CMakeFiles/Foo.dir/main.cpp.o"
+  "/workspaces/try-codespace/api/foo.cpp" "/workspaces/try-codespace/build/api/CMakeFiles/api.dir/foo.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../api"
-  "../old_api"
   )
 
 # Targets to which this target links.

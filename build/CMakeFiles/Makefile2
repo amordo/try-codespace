@@ -54,20 +54,59 @@ CMAKE_BINARY_DIR = /workspaces/try-codespace/build
 
 # The main recursive "all" target.
 all: CMakeFiles/Foo.dir/all
-all: CMakeFiles/foo_copy.dir/all
+all: old_api/all
+all: api/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: old_api/preinstall
+preinstall: api/preinstall
 
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/Foo.dir/clean
-clean: CMakeFiles/foo_copy.dir/clean
+clean: old_api/clean
+clean: api/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory api
+
+# Recursive "all" directory target.
+api/all: api/CMakeFiles/api.dir/all
+
+.PHONY : api/all
+
+# Recursive "preinstall" directory target.
+api/preinstall:
+
+.PHONY : api/preinstall
+
+# Recursive "clean" directory target.
+api/clean: api/CMakeFiles/api.dir/clean
+
+.PHONY : api/clean
+
+#=============================================================================
+# Directory level rules for directory old_api
+
+# Recursive "all" directory target.
+old_api/all: old_api/CMakeFiles/old_api.dir/all
+
+.PHONY : old_api/all
+
+# Recursive "preinstall" directory target.
+old_api/preinstall:
+
+.PHONY : old_api/preinstall
+
+# Recursive "clean" directory target.
+old_api/clean: old_api/CMakeFiles/old_api.dir/clean
+
+.PHONY : old_api/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/Foo.dir
@@ -76,12 +115,12 @@ clean: CMakeFiles/foo_copy.dir/clean
 CMakeFiles/Foo.dir/all:
 	$(MAKE) -f CMakeFiles/Foo.dir/build.make CMakeFiles/Foo.dir/depend
 	$(MAKE) -f CMakeFiles/Foo.dir/build.make CMakeFiles/Foo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/try-codespace/build/CMakeFiles --progress-num=1,2,3 "Built target Foo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/try-codespace/build/CMakeFiles --progress-num=1,2 "Built target Foo"
 .PHONY : CMakeFiles/Foo.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Foo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/try-codespace/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/try-codespace/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Foo.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/try-codespace/build/CMakeFiles 0
 .PHONY : CMakeFiles/Foo.dir/rule
@@ -97,31 +136,58 @@ CMakeFiles/Foo.dir/clean:
 .PHONY : CMakeFiles/Foo.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/foo_copy.dir
+# Target rules for target old_api/CMakeFiles/old_api.dir
 
 # All Build rule for target.
-CMakeFiles/foo_copy.dir/all:
-	$(MAKE) -f CMakeFiles/foo_copy.dir/build.make CMakeFiles/foo_copy.dir/depend
-	$(MAKE) -f CMakeFiles/foo_copy.dir/build.make CMakeFiles/foo_copy.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/try-codespace/build/CMakeFiles --progress-num=4,5 "Built target foo_copy"
-.PHONY : CMakeFiles/foo_copy.dir/all
+old_api/CMakeFiles/old_api.dir/all:
+	$(MAKE) -f old_api/CMakeFiles/old_api.dir/build.make old_api/CMakeFiles/old_api.dir/depend
+	$(MAKE) -f old_api/CMakeFiles/old_api.dir/build.make old_api/CMakeFiles/old_api.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/try-codespace/build/CMakeFiles --progress-num=5,6 "Built target old_api"
+.PHONY : old_api/CMakeFiles/old_api.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/foo_copy.dir/rule: cmake_check_build_system
+old_api/CMakeFiles/old_api.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/try-codespace/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/foo_copy.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 old_api/CMakeFiles/old_api.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/try-codespace/build/CMakeFiles 0
-.PHONY : CMakeFiles/foo_copy.dir/rule
+.PHONY : old_api/CMakeFiles/old_api.dir/rule
 
 # Convenience name for target.
-foo_copy: CMakeFiles/foo_copy.dir/rule
+old_api: old_api/CMakeFiles/old_api.dir/rule
 
-.PHONY : foo_copy
+.PHONY : old_api
 
 # clean rule for target.
-CMakeFiles/foo_copy.dir/clean:
-	$(MAKE) -f CMakeFiles/foo_copy.dir/build.make CMakeFiles/foo_copy.dir/clean
-.PHONY : CMakeFiles/foo_copy.dir/clean
+old_api/CMakeFiles/old_api.dir/clean:
+	$(MAKE) -f old_api/CMakeFiles/old_api.dir/build.make old_api/CMakeFiles/old_api.dir/clean
+.PHONY : old_api/CMakeFiles/old_api.dir/clean
+
+#=============================================================================
+# Target rules for target api/CMakeFiles/api.dir
+
+# All Build rule for target.
+api/CMakeFiles/api.dir/all:
+	$(MAKE) -f api/CMakeFiles/api.dir/build.make api/CMakeFiles/api.dir/depend
+	$(MAKE) -f api/CMakeFiles/api.dir/build.make api/CMakeFiles/api.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/try-codespace/build/CMakeFiles --progress-num=3,4 "Built target api"
+.PHONY : api/CMakeFiles/api.dir/all
+
+# Build rule for subdir invocation for target.
+api/CMakeFiles/api.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/try-codespace/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 api/CMakeFiles/api.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/try-codespace/build/CMakeFiles 0
+.PHONY : api/CMakeFiles/api.dir/rule
+
+# Convenience name for target.
+api: api/CMakeFiles/api.dir/rule
+
+.PHONY : api
+
+# clean rule for target.
+api/CMakeFiles/api.dir/clean:
+	$(MAKE) -f api/CMakeFiles/api.dir/build.make api/CMakeFiles/api.dir/clean
+.PHONY : api/CMakeFiles/api.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

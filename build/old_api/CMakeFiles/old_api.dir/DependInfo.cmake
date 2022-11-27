@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/workspaces/try-codespace/foo_copy.cpp" "/workspaces/try-codespace/build/CMakeFiles/foo_copy.dir/foo_copy.cpp.o"
+  "/workspaces/try-codespace/old_api/foo.cpp" "/workspaces/try-codespace/build/old_api/CMakeFiles/old_api.dir/foo.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/workspaces/try-codespace/api -I/workspaces/try-codespace/old_api 
+CXX_INCLUDES = 
 

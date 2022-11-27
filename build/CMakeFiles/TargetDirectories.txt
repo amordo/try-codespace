@@ -1,4 +1,9 @@
+/workspaces/try-codespace/build/CMakeFiles/rebuild_cache.dir
 /workspaces/try-codespace/build/CMakeFiles/edit_cache.dir
 /workspaces/try-codespace/build/CMakeFiles/Foo.dir
-/workspaces/try-codespace/build/CMakeFiles/rebuild_cache.dir
-/workspaces/try-codespace/build/CMakeFiles/foo_copy.dir
+/workspaces/try-codespace/build/old_api/CMakeFiles/edit_cache.dir
+/workspaces/try-codespace/build/old_api/CMakeFiles/rebuild_cache.dir
+/workspaces/try-codespace/build/old_api/CMakeFiles/old_api.dir
+/workspaces/try-codespace/build/api/CMakeFiles/rebuild_cache.dir
+/workspaces/try-codespace/build/api/CMakeFiles/edit_cache.dir
+/workspaces/try-codespace/build/api/CMakeFiles/api.dir

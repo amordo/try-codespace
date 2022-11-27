@@ -93,9 +93,11 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.16/Modules/Platform/Linux.cmake"
   "/usr/share/cmake-3.16/Modules/Platform/UnixPaths.cmake"
   "../CMakeLists.txt"
+  "../api/CMakeLists.txt"
   "CMakeFiles/3.16.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeSystem.cmake"
+  "../old_api/CMakeLists.txt"
   )
 
 # The corresponding makefile is:
@@ -112,10 +114,13 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/3.16.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "old_api/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "api/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/Foo.dir/DependInfo.cmake"
-  "CMakeFiles/foo_copy.dir/DependInfo.cmake"
+  "old_api/CMakeFiles/old_api.dir/DependInfo.cmake"
+  "api/CMakeFiles/api.dir/DependInfo.cmake"
   )
