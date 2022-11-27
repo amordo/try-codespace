@@ -1,1 +1,0 @@
-add_library(old_api foo.cpp)

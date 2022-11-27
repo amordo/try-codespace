@@ -1,0 +1,1 @@
+add_library(api_v2 foo.cpp)

@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /workspaces/try-codespace/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -78,16 +67,27 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/try-codespace/build/CMakeFiles /workspaces/try-codespace/build/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
+	cd /workspaces/try-codespace/build && $(CMAKE_COMMAND) -E cmake_progress_start /workspaces/try-codespace/build/CMakeFiles /workspaces/try-codespace/build/api_v1/CMakeFiles/progress.marks
+	cd /workspaces/try-codespace/build && $(MAKE) -f CMakeFiles/Makefile2 api_v1/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/try-codespace/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /workspaces/try-codespace/build && $(MAKE) -f CMakeFiles/Makefile2 api_v1/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,44 +97,60 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /workspaces/try-codespace/build && $(MAKE) -f CMakeFiles/Makefile2 api_v1/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /workspaces/try-codespace/build && $(MAKE) -f CMakeFiles/Makefile2 api_v1/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /workspaces/try-codespace/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named api_v1
+# Convenience name for target.
+api_v1/CMakeFiles/api_v1.dir/rule:
+	cd /workspaces/try-codespace/build && $(MAKE) -f CMakeFiles/Makefile2 api_v1/CMakeFiles/api_v1.dir/rule
+.PHONY : api_v1/CMakeFiles/api_v1.dir/rule
 
-# Build rule for target.
-api_v1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 api_v1
+# Convenience name for target.
+api_v1: api_v1/CMakeFiles/api_v1.dir/rule
+
 .PHONY : api_v1
 
 # fast build rule for target.
 api_v1/fast:
-	$(MAKE) -f api_v1/CMakeFiles/api_v1.dir/build.make api_v1/CMakeFiles/api_v1.dir/build
+	cd /workspaces/try-codespace/build && $(MAKE) -f api_v1/CMakeFiles/api_v1.dir/build.make api_v1/CMakeFiles/api_v1.dir/build
 .PHONY : api_v1/fast
 
-#=============================================================================
-# Target rules for targets named api_v2
+foo.o: foo.cpp.o
 
-# Build rule for target.
-api_v2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 api_v2
-.PHONY : api_v2
+.PHONY : foo.o
 
-# fast build rule for target.
-api_v2/fast:
-	$(MAKE) -f api_v2/CMakeFiles/api_v2.dir/build.make api_v2/CMakeFiles/api_v2.dir/build
-.PHONY : api_v2/fast
+# target to build an object file
+foo.cpp.o:
+	cd /workspaces/try-codespace/build && $(MAKE) -f api_v1/CMakeFiles/api_v1.dir/build.make api_v1/CMakeFiles/api_v1.dir/foo.cpp.o
+.PHONY : foo.cpp.o
+
+foo.i: foo.cpp.i
+
+.PHONY : foo.i
+
+# target to preprocess a source file
+foo.cpp.i:
+	cd /workspaces/try-codespace/build && $(MAKE) -f api_v1/CMakeFiles/api_v1.dir/build.make api_v1/CMakeFiles/api_v1.dir/foo.cpp.i
+.PHONY : foo.cpp.i
+
+foo.s: foo.cpp.s
+
+.PHONY : foo.s
+
+# target to generate assembly for a file
+foo.cpp.s:
+	cd /workspaces/try-codespace/build && $(MAKE) -f api_v1/CMakeFiles/api_v1.dir/build.make api_v1/CMakeFiles/api_v1.dir/foo.cpp.s
+.PHONY : foo.cpp.s
 
 # Help Target
 help:
@@ -142,10 +158,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... rebuild_cache"
 	@echo "... api_v1"
-	@echo "... api_v2"
+	@echo "... foo.o"
+	@echo "... foo.i"
+	@echo "... foo.s"
 .PHONY : help
 
 
@@ -157,6 +175,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /workspaces/try-codespace/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

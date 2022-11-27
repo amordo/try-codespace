@@ -1,17 +1,12 @@
 [
 {
-  "directory": "/workspaces/try-codespace/build",
-  "command": "/usr/bin/c++   -I/workspaces/try-codespace/api -I/workspaces/try-codespace/old_api    -o CMakeFiles/Foo.dir/main.cpp.o -c /workspaces/try-codespace/main.cpp",
-  "file": "/workspaces/try-codespace/main.cpp"
+  "directory": "/workspaces/try-codespace/build/api_v1",
+  "command": "/usr/bin/c++      -o CMakeFiles/api_v1.dir/foo.cpp.o -c /workspaces/try-codespace/api_v1/foo.cpp",
+  "file": "/workspaces/try-codespace/api_v1/foo.cpp"
 },
 {
-  "directory": "/workspaces/try-codespace/build/old_api",
-  "command": "/usr/bin/c++      -o CMakeFiles/old_api.dir/foo.cpp.o -c /workspaces/try-codespace/old_api/foo.cpp",
-  "file": "/workspaces/try-codespace/old_api/foo.cpp"
-},
-{
-  "directory": "/workspaces/try-codespace/build/api",
-  "command": "/usr/bin/c++      -o CMakeFiles/api.dir/foo.cpp.o -c /workspaces/try-codespace/api/foo.cpp",
-  "file": "/workspaces/try-codespace/api/foo.cpp"
+  "directory": "/workspaces/try-codespace/build/api_v2",
+  "command": "/usr/bin/c++      -o CMakeFiles/api_v2.dir/foo.cpp.o -c /workspaces/try-codespace/api_v2/foo.cpp",
+  "file": "/workspaces/try-codespace/api_v2/foo.cpp"
 }
 ]
